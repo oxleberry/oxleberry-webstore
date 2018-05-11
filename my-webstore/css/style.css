@@ -1,0 +1,79 @@
+
+/* BASE STYLES ========================================= */
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.clearfix::after {
+    display: table:
+    clear: both;
+    content: "";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+section {
+    background: pink;
+}
+
+nav ul, .container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2em;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    padding: 1em;
+}
+
+main {
+    background-color: lightblue;
+    width: 68%;
+}
+
+aside {
+    background-color: honeydew;
+    width: 30%;
+}
+
+/* HEADER ========================================= */
+
+
+/* MAIN ========================================= */
+
+.container {
+    flex-wrap: wrap;
+}
+
+.temp {
+    margin: 2em;
+    width: 41%;
+    height: 20em;
+    background-color: tomato;
+}
+
+/* .temp:nth-child(2n+1) {
+    background-color: tomato;
+} */
+
+/* MEDIA QUERIES ========================================= */
+/*
+@media screen and (max-width: 425px){
+html {
+font-size: 12pt;
+}
+}
+*/
