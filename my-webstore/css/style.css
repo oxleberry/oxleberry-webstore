@@ -86,6 +86,10 @@ img {
     background-size: cover;
 }
 
+#store-container {
+    min-height: 100vh;
+}
+
 .hide {
     opacity: 0;
 }
@@ -95,9 +99,9 @@ img {
 }
 
 /* #onesie-2 {
-    background-image: url('../images/dino_blue.png');
-    background-position: center;
-    background-size: cover;
+background-image: url('../images/dino_blue.png');
+background-position: center;
+background-size: cover;
 } */
 
 
