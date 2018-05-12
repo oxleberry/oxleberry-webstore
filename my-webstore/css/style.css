@@ -19,6 +19,7 @@ body {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     text-align: center;
+
 }
 
 section {
@@ -55,6 +56,10 @@ aside {
     width: 30%;
 }
 
+img {
+    width: 100%;
+}
+
 /* HEADER ========================================= */
 
 
@@ -71,11 +76,14 @@ aside {
     justify-content: center;
 }
 
-.temp {
+.store-img {
     margin: 2em;
     width: 41%;
-    height: 20em;
-    background-color: tomato;
+    /* height: 20em; */
+    /* background-color: tomato; */
+    align-items: center;
+    background-position: center;
+    background-size: cover;
 }
 
 .hide {
@@ -86,9 +94,12 @@ aside {
     opacity: 1;
 }
 
-/* .temp:nth-child(2n+1) {
-    background-color: tomato;
+/* #onesie-2 {
+    background-image: url('../images/dino_blue.png');
+    background-position: center;
+    background-size: cover;
 } */
+
 
 /* MEDIA QUERIES ========================================= */
 /*
