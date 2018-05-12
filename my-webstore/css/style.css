@@ -3,7 +3,7 @@
 
 * {
     box-sizing: border-box;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .clearfix::after {
@@ -15,7 +15,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
     text-align: center;
 }
 
@@ -39,6 +41,10 @@ a {
     padding: 1em;
 }
 
+button {
+    margin: 0 auto;
+}
+
 main {
     background-color: lightblue;
     width: 68%;
@@ -58,11 +64,26 @@ aside {
     flex-wrap: wrap;
 }
 
+.container-center {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2em;
+    justify-content: center;
+}
+
 .temp {
     margin: 2em;
     width: 41%;
     height: 20em;
     background-color: tomato;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
 }
 
 /* .temp:nth-child(2n+1) {
