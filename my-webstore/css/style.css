@@ -3,7 +3,6 @@
 
 * {
     box-sizing: border-box;
-    /* font-size: 16px; */
 }
 
 .clearfix::after {
@@ -15,29 +14,21 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Flamenco', cursive;
     text-transform: uppercase;
     text-align: center;
+    background-color: #5a4d4d;
 }
 
-section {
-    background: pink;
+hr {
+    border: 1px solid #c1c5da;
 }
 
-nav ul, .container {
+.container {
     display: flex;
     flex-direction: row;
-    margin: 0 2em;
     justify-content: space-between;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    padding: 1em;
+    flex-wrap: wrap;
 }
 
 button {
@@ -48,51 +39,16 @@ img {
     width: 100%;
 }
 
-p, h2, h3, h4 {
-    display: inline-block;
+a {
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 1em;
+    color: #a2a2a2;
+    text-shadow: 2px 2px 4px #02040e;
 }
 
-h4 {
-    float: right;
-}
-
-/* HEADER ========================================= */
-
-
-/* MAIN ========================================= */
-
-main {
-    background-color: lightblue;
-    width: 68%;
-}
-
-.container {
-    flex-wrap: wrap;
-}
-
-.container-center {
-    display: flex;
-    flex-direction: row;
-    margin: 0 2em;
-    justify-content: center;
-}
-
-.img-container {
-    width: 45%;
-}
-
-#store-container {
-    min-height: 100vh;
-    display: block;
-    flex-wrap: nowrap;
-}
-
-.store-img {
-    margin-bottom: 1em;
-    width: 100%;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
+a:hover {
+    color: honeydew;
 }
 
 .hide {
@@ -103,23 +59,166 @@ main {
     opacity: 1;
 }
 
+/* HEADER ========================================= */
+
+header h1 {
+    color: honeydew;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #231010;
+    letter-spacing: 2px;
+    margin-bottom: 0em;
+}
+
+nav {
+    margin: .8em 0 .6em;
+    background-color: #2a3158;
+    padding: 1em;
+}
+
+/* MAIN ========================================= */
+
+main {
+    background-color: #fff;
+    width: 68%;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container-center {
+    display: flex;
+    flex-direction: row;
+    /* margin: 0 2em; */
+    justify-content: center;
+}
+
+#store-container {
+    min-height: 100vh;
+    display: block;
+    flex-wrap: nowrap;
+    padding: 2.5em 2em;
+}
+
+#store-container p {
+    max-width: 80%;
+    line-height: 1.5em;
+    text-transform: none;
+    margin: 0 auto;
+}
+
+p, #store-container h2 {
+    display: inline-block;
+}
+
+#store-container h3 {
+    padding-left: 2em;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    float: right;
+}
+
+.img-container {
+    width: 45%;
+}
+
+.store-img {
+    margin-bottom: 1em;
+    width: 100%;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+}
+
 /* SHOPPING CART ========================================= */
 
 aside {
-    background-color: honeydew;
+    /* background-color: honeydew; */
+    background-color: #d7dae8;
     width: 30%;
+    padding-top: 2.5em;
+    min-height: 20em;
+}
+
+#shopping-list ul {
+    text-align: right;
+    /* float: right; */
+}
+
+ul {
+    padding: 0 2em;
+}
+
+li {
+    list-style: none;
 }
 
 .listPrice {
-    padding-left: 3em;
+    padding-left: 2em;
+    font-family: sans-serif;
+    font-weight: 200;
 }
 
+small {
+    text-transform: none;
+    color: rgba(0,0,0,.5);
+    margin: 0 auto;
+}
 
 /* MEDIA QUERIES ========================================= */
-/*
-@media screen and (max-width: 425px){
-html {
-font-size: 12pt;
+
+@media screen and (max-width: 1000px){
+
+    html {
+        font-size: 12pt;
+    }
+
+    header h1 {
+        padding: 0.5em 1em;
+    }
+
+    nav {
+        margin: 1em 0 0 0;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    main, aside {
+        width: 100%;
+    }
+
+    .container-main {
+        margin: 0;
+    }
+
+    .container, .container-main {
+        flex-direction: column;
+    }
+
+    #store-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img-container {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 1em;
+        border-bottom: 1px solid #9a9a9a;
+    }
+
+    ul {
+        padding: 0px 4em;
+    }
+
 }
-}
-*/

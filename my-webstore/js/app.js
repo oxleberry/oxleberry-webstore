@@ -1,7 +1,7 @@
 
 /* VARIABLES ========================================= */
-var homelinkEl = document.getElementsByTagName('a')[0];
-var storeLinksEls = document.getElementsByClassName('store-link');
+// var homelinkEl = document.getElementsByTagName('a')[0];
+var storeLinksEls = document.getElementsByTagName('a');
 var storeContainerEl = document.getElementById('store-container');
 var divEl = document.createElement('div');
 
@@ -46,8 +46,8 @@ function findImages(storeObj){
         divEl2.className = 'img-container';
         divEl.appendChild(divEl2);
         // grabs the name label and pricing
-        var h3El = document.createElement('h3');
-        var h4El = document.createElement('h4');
+        var h3El = document.createElement('h2');
+        var h4El = document.createElement('h3');
         h3El.textContent = currentItem.name;
         h4El.textContent = `$${currentItem.price}`;
         // finds the images paths
@@ -67,9 +67,9 @@ function findImages(storeObj){
 }
 
 // hide webstore images, when clicked back to HOME link
-homelinkEl.addEventListener('click', function(){
-    storeContainerEl.className = 'hide';
-});
+// homelinkEl.addEventListener('click', function(){
+//     storeContainerEl.className = 'hide';
+// });
 
 /* SHOPPING CART ===================================== */
 
