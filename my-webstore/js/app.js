@@ -1,6 +1,6 @@
 
 /* VARIABLES ========================================= */
-// var homelinkEl = document.getElementsByTagName('a')[0];
+var shoppingCart = [];
 var storeLinksEls = document.getElementsByTagName('a');
 var storeContainerEl = document.getElementById('store-container');
 var divEl = document.createElement('div');
@@ -16,8 +16,9 @@ for (var i = 0; i < storeLinksEls.length; i++){
         storeContainerEl.innerHTML = "";
         storeContainerEl.className = 'show';
         divEl.className = 'container';
+        // finds which link is clicked on
         var storeObj = whichBrand(linkData);
-        // find images and applies to the div
+        // find images, name, price and applies to the store-container
         findImages(storeObj);
         storeContainerEl.appendChild(divEl);
     });
@@ -59,22 +60,17 @@ function findImages(storeObj){
         divEl2.appendChild(h4El);
         divEl2.appendChild(imgEl);
 
-        // event lister to check if an image is clicked to add to shopping list
-        imgEl.addEventListener('click', addToList);
+        // event lister to check if an image is clicked to add to shopping cart
+        imgEl.addEventListener('click', addToShoppingCart);
         imgEl.dataset.number = currentItem.price;
         imgEl.dataset.label = currentItem.name;
     }
 }
 
-// hide webstore images, when clicked back to HOME link
-// homelinkEl.addEventListener('click', function(){
-//     storeContainerEl.className = 'hide';
-// });
-
 /* SHOPPING CART ===================================== */
 
-function addToList (){
-    // grabs and creates elements
+function addToShoppingCart (){
+    // grabs and creates elements for shopping-list
     var ulEl = document.querySelector('ul');
     var liEl = document.createElement('li');
     var pLabelEl = document.createElement('p');
@@ -85,8 +81,31 @@ function addToList (){
     var listPrice = this.dataset.number;
     pLabelEl.textContent = listLabel;
     pPriceEl.textContent = `$${listPrice}`;
-    // appends items
+    // appends items to shopping list
     liEl.appendChild(pLabelEl);
     liEl.appendChild(pPriceEl);
     ulEl.appendChild(liEl);
+
+    // grabs clicked item and adds to shoppingCart array
+    shoppingCart.push(Number(listPrice));
+    var shoppingTotal = calcTotal();
+    // grabs and creates elements for shopping-total
+    var shoppingTotalEl = document.getElementById('shopping-total');
+    var pTotalEl = document.createElement('p');
+    var hr2El = document.querySelectorAll('hr')[1];
+    hr2El.className = 'show';
+    // appends shopping-total
+    var whiteSpace = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
+    shoppingTotalEl.innerHTML='';
+    pTotalEl.className = 'listPrice';
+    pTotalEl.innerHTML =`Total${whiteSpace}$${shoppingTotal}`;
+    shoppingTotalEl.appendChild(pTotalEl);
+}
+
+// calculates the total from the items in the shopping cart
+function calcTotal () {
+    var calcTotal = shoppingCart.reduce(function(acc, val){
+        return acc + val;
+    });
+    return calcTotal;
 }
